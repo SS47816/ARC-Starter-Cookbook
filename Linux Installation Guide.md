@@ -53,6 +53,26 @@ sudo apt update
 sudo apt install git
 ```
 
+**Note: **When you use git for the first time on your machine, you need to set your user-name and your email address: 
+
+```bash
+# Set user-name
+git config --global user.name "FIRST_NAME LAST_NAME"
+
+# Set email address
+git config --global user.email "MY_NAME@example.com"
+```
+
+If it is your own machine and you would like to save the trouble of typing your user-name and password every time, you may save them in the machine by running: ([as describled in this post](https://stackoverflow.com/questions/35942754/how-to-save-username-and-password-in-git-gitextension))
+
+```bash
+# Store credentials
+git config --global credential.helper store
+
+# Do something in git, for example
+git pull
+```
+
 
 
 ### [Typora](https://typora.io/): a markdown file editor
@@ -131,4 +151,4 @@ bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh
 * Visual Studio IntelliCode
 * GitLens
 * ROS
-* TabNine (Optional, It's Magic!)
+* TabNine (Optional, it's magic!)

@@ -36,11 +36,49 @@ Please follow the respective guide based on your system:
 
 
 
-### Nvidia GPU Driver + CUDA + cuDNN
+### Nvidia GPU Driver (version 440)
 
-Isaac SDK required pkg version:
+1. Run:
 
-* tensorflow
+   ```bash
+   sudo add-apt-repository ppa:graphics-drivers/ppa
+   sudo apt-get update
+   sudo apt-get install nvidia-driver-440
+   ```
+
+2. Reboot your system
+
+3. Check your GPU driver info:
+
+   ```bash
+   nvidia-smi
+   ```
+
+   
+
+### CUDA Toolkit for Machine Learning
+
+Recommended package versions:
+
+* TensorFlow 1.15.0
+
+* CUDA 10.0
+
+* cuDNN 7.6.3
+
+* TensorRT 6.0
+
+  
+
+1. To install dependencies, at the root folder of the Isaac SDK repository run the following command:
+
+   ```bash
+   engine/build/scripts/install_dependencies.sh
+   ```
+
+   
+
+
 
 [Installation Guide](https://www.tensorflow.org/install/gpu)
 
@@ -74,14 +112,6 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
     libnvinfer-dev=6.0.1-1+cuda10.1 \
     libnvinfer-plugin6=6.0.1-1+cuda10.1
 
-```
-
-
-
-```bash
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get update
-sudo apt-get install nvidia-driver-440
 ```
 
 

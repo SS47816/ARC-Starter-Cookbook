@@ -18,7 +18,7 @@ Cookbook for new Robotics students
 
 
 
-## Installation
+## Installationengine/build/scripts/install_dependencies.sh
 
 Please follow the respective guide based on your system:
 
@@ -36,7 +36,11 @@ Please follow the respective guide based on your system:
 
 
 
-### Nvidia GPU Driver (If applicable)
+### Nvidia GPU Driver + CUDA + cuDNN
+
+Isaac SDK required pkg version:
+
+* tensorflow
 
 [Installation Guide](https://www.tensorflow.org/install/gpu)
 
@@ -71,6 +75,20 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
     libnvinfer-plugin6=6.0.1-1+cuda10.1
 
 ```
+
+
+
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-driver-440
+```
+
+
+
+### [Bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
+
+
 
 
 

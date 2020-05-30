@@ -60,15 +60,15 @@ Please follow the respective guide based on your system:
 
 Recommended package versions:
 
-* TensorFlow 1.15.0
-
 * CUDA 10.0
-
 * cuDNN 7.6.3
-
 * TensorRT 6.0
 
-  
+The installation instructions for CUDA Toolkit 10.0 can be found [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+
+
+
+* TensorFlow 1.15.0
 
 1. To install dependencies, at the root folder of the Isaac SDK repository run the following command:
 

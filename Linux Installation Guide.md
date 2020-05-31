@@ -64,7 +64,31 @@ Recommended package versions:
 * cuDNN 7.6.3
 * TensorRT 6.0
 
-The installation instructions for CUDA Toolkit 10.0 can be found [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+
+2. Then run:
+
+   ```bash
+   sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+   
+   sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+   
+   sudo apt-get update
+   
+   sudo apt-get install cuda-10-0
+   ```
+
+3. Post-installation actions:
+
+   ```bash
+   # To add this path to the PATH variable:
+   # Example: CUDA 10.0 with NsightCompute-1.0
+   export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
+   ```
+
+4. sfa
+
+
 
 
 
@@ -191,6 +215,19 @@ sudo apt-get install sublime-text
 
 
 
+### [VS Code](https://code.visualstudio.com/): an Integrated Development Environment (IDE)
+
+#### Recommended Extensions:
+
+* C/C++
+* Python
+* Visual Studio IntelliCode
+* GitLens
+* ROS
+* TabNine (Optional, it's magic!)
+
+
+
 ### [Anaconda](https://docs.anaconda.com/anaconda/install/linux/): a python virtual environment manager 
 
 1. Download the Python 3.7 version Anaconda 64-Bit (x86) Installer from [here](https://www.anaconda.com/products/individual#linux), and save it to `~/Downloads/`
@@ -199,7 +236,7 @@ sudo apt-get install sublime-text
 
 ```bash
 # To use GUI packages with Linux, you will need to install the following extended dependencies for Qt:
-apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 
 bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh
 ```
@@ -233,13 +270,35 @@ conda env create -f environment.yml
 
 
 
-### [VS Code](https://code.visualstudio.com/): an Integrated Development Environment (IDE)
+### Nvidia Isaac SDK
 
-#### Recommended Extensions:
+[Official Installation Guide](https://docs.nvidia.com/isaac/isaac/doc/setup.html#cuda-requirements-for-machine-learning)
 
-* C/C++
-* Python
-* Visual Studio IntelliCode
-* GitLens
-* ROS
-* TabNine (Optional, it's magic!)
+1. Activate your conda virtual environment created just now
+
+   ```bash
+   # For example, mine is called isaac
+   conda activate isaac
+   ```
+
+2. Install Dependencies:
+
+   This includes:
+
+   * Bazel
+   * TensorFlow 1.15
+   * Pytorch
+
+   ```bash
+   # Navigate to your downloaded isaac sdk package
+   # For example, it is located at `/home/` and has been renamed to `isaac_sdk`
+   cd 
+   cd isaac_sdk
+   
+   # Install dependencies
+   engine/build/scripts/install_dependencies.sh
+   ```
+
+3. 
+
+   

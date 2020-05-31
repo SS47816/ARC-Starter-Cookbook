@@ -140,12 +140,6 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
 
 
 
-### [Bazel](https://docs.bazel.build/versions/master/install-ubuntu.html)
-
-
-
-
-
 ## Developer Tools on Linux
 
 ### [Git](https://git-scm.com/): version control tool
@@ -302,3 +296,40 @@ conda env create -f environment.yml
 3. 
 
    
+
+### Nvidia Isaac Sim (Unity3D)
+
+1. Download the Isaac Sim file from [here](https://developer.nvidia.com/isaac/downloads)
+2. Unzip it to `$HOME/isaac_sim_unity3d`
+
+#### Install Unity Editor for Editor Mode
+
+1. Create a [Unity account](https://id.unity.com/account/new)
+
+2. Download Unity Hub for Linux from the [Unity Forum](https://forum.unity.com/threads/unity-hub-v-1-3-2-is-now-available.594139/)
+
+3. Run:
+
+   ```bash
+   chmod +x UnityHub.AppImage
+   ./UnityHub.AppImage
+   ```
+
+4. Click the person icon in the upper right and select **Sign in**. Sign in with your Unity ID.
+
+5. Select **Installs** on the left, then select **Add**.
+
+6. In the **Add Unity Version** popup window, install 2019.3.x (no modules are required). The sample project for IsaacSim Unity3D is created with 2019.3.0f6, so any newer 2019.3 version can be used.
+
+
+
+---
+
+
+
+## Other Resources
+
+### [Zoom](https://zoom.us/download#client_4meeting): Online Meetings
+
+
+

@@ -33,7 +33,7 @@ Please follow the respective guide based on your system:
 
 
 
-**Notes:** For either system, in the installation settings, please allocate at least 20 GB for `/root` and 20 GB for `/home`
+**Notes:** For either system, in the installation settings, please allocate at least 30 GB for `/root` and 30 GB for `/home`
 
 
 
@@ -60,38 +60,45 @@ Please follow the respective guide based on your system:
 
 ### CUDA Toolkit for Machine Learning
 
-Recommended package versions:
+* **CUDA 10.0**
 
-* CUDA 10.0
-* cuDNN 7.6.3
-* TensorRT 6.0
+  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
 
-1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+  2. Then run:
 
-2. Then run:
+     ```bash
+     sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+     
+     sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+     
+     sudo apt-get update
+     
+     sudo apt-get install cuda-10-0
+     ```
 
-   ```bash
-   sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
-   
-   sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-   
-   sudo apt-get update
-   
-   sudo apt-get install cuda-10-0
-   ```
+  3. Post-installation actions:
 
-3. Post-installation actions:
+     ```bash
+     # To add this path to the PATH variable:
+     # Example: CUDA 10.0 with NsightCompute-1.0
+     export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
+     ```
 
-   ```bash
-   # To add this path to the PATH variable:
-   # Example: CUDA 10.0 with NsightCompute-1.0
-   export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
-   ```
+     
 
+* **cuDNN 7.6.3**
 
+  <TODO>
+
+* **TensorRT 6.0**
+
+  <TODO>
 
 
-* TensorFlow 1.15.0
+
+* **Common Python Libraries**
+* **TensorFlow 1.15.0**
+* **Pytorch**
 
 1. To install dependencies, at the root folder of the Isaac SDK repository run the following command:
 
@@ -170,9 +177,7 @@ sudo apt-get install sublime-text
 
 
 
-
-
-### Python Virtual Environment
+### [Python Virtual Environment](https://docs.python.org/3/library/venv.html)
 
 1. Install:
 
@@ -196,8 +201,6 @@ sudo apt-get install sublime-text
    # For example, my virtual environment is named as `venv_isaac`
    source venv_isaac/bin/activate
    ```
-
-
 
 
 
@@ -263,8 +266,6 @@ sudo apt-get install sublime-text
 5. Select **Installs** on the left, then select **Add**.
 
 6. In the **Add Unity Version** popup window, install 2019.3.x (no modules are required). The sample project for IsaacSim Unity3D is created with 2019.3.0f6, so any newer 2019.3 version can be used.
-
-
 
 
 

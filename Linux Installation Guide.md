@@ -12,13 +12,14 @@ Cookbook for new Robotics students
 
 ## Prerequisite
 
+* A PC with Nvidia GPU (Host machine)
 * An USB stick (8G and above)
 * Internet Connection
 * [Ubuntu 18.04.4 ISO image](https://releases.ubuntu.com/18.04.4/)
 
 
 
-## Installationengine/build/scripts/install_dependencies.sh
+## Installation
 
 Please follow the respective guide based on your system:
 
@@ -43,12 +44,13 @@ Please follow the respective guide based on your system:
    ```bash
    sudo add-apt-repository ppa:graphics-drivers/ppa
    sudo apt-get update
+   # version 440 is recommended
    sudo apt-get install nvidia-driver-440
    ```
 
 2. Reboot your system
 
-3. Check your GPU driver info:
+3. Check your GPU driver is properly installed:
 
    ```bash
    nvidia-smi

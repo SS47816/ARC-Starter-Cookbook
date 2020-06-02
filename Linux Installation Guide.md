@@ -31,9 +31,9 @@ Please follow the respective guide based on your system:
 
 * [Video Tutorial](https://www.youtube.com/watch?v=kRgKlcm1XPI)
 
-
-
 **Notes:** For either system, in the installation settings, please allocate at least 30 GB for `/root` and 30 GB for `/home`
+
+
 
 
 
@@ -56,7 +56,10 @@ Please follow the respective guide based on your system:
    nvidia-smi
    ```
 
-   
+
+
+
+
 
 ### CUDA Toolkit for Machine Learning
 
@@ -84,7 +87,10 @@ Please follow the respective guide based on your system:
      export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
      ```
 
-     
+
+
+
+
 
 * **cuDNN 7.6.3**
 
@@ -93,6 +99,8 @@ Please follow the respective guide based on your system:
 * **TensorRT 6.0**
 
   <TODO>
+
+
 
 
 
@@ -106,7 +114,10 @@ Please follow the respective guide based on your system:
    engine/build/scripts/install_dependencies.sh
    ```
 
-   
+
+
+
+
 
 ## Developer Tools on Linux
 
@@ -141,6 +152,8 @@ git pull
 
 
 
+
+
 ### [Typora](https://typora.io/): a markdown file editor
 
 ```bash
@@ -155,6 +168,8 @@ sudo apt-get update
 # install typora
 sudo apt-get install typora
 ```
+
+
 
 
 
@@ -174,6 +189,8 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 ```
+
+
 
 
 
@@ -201,6 +218,8 @@ sudo apt-get install sublime-text
    # For example, my virtual environment is named as `venv_isaac`
    source venv_isaac/bin/activate
    ```
+
+
 
 
 
@@ -241,7 +260,10 @@ sudo apt-get install sublime-text
    
    Else, you will need to troubleshoot the errors.
    
-   
+
+
+
+
 
 ### Nvidia Isaac Sim (Unity3D)
 
@@ -269,6 +291,8 @@ sudo apt-get install sublime-text
 
 
 
+
+
 ### [VS Code](https://code.visualstudio.com/): an Integrated Development Environment (IDE)
 
 #### Recommended Extensions:
@@ -282,11 +306,17 @@ sudo apt-get install sublime-text
 
 
 
+
+
 ---
 
 
 
+
+
 ## Additional Resources
+
+
 
 ### CUDA (Alternative Installation Guide) (Not recommended)
 
@@ -323,6 +353,8 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
     libnvinfer-plugin6=6.0.1-1+cuda10.1
 
 ```
+
+
 
 
 
@@ -365,6 +397,8 @@ To create a environment according to specifications stored in a file, run:
 ```bash
 conda env create -f environment.yml
 ```
+
+
 
 
 

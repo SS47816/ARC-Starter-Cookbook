@@ -123,7 +123,7 @@ Please follow the respective guide based on your system:
 
 ### [Git](https://git-scm.com/): version control tool
 
-run the following command in the Terminal:
+1. run the following command in the Terminal:
 
 ```bash
 sudo apt update
@@ -149,6 +149,16 @@ git config --global credential.helper store
 # Do something in git, for example
 git pull
 ```
+
+
+
+### [CMake](https://cmake.org/): project build tool
+
+1. Run:
+
+   ```bash
+   sudo apt install cmake
+   ```
 
 
 

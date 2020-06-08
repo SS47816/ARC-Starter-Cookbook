@@ -95,11 +95,13 @@ Please follow the respective guide based on your system:
      ```
 
 
-* **cuDNN 7.6.3** [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138)
+* **cuDNN 7.6.3** 
 
   1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
 
-  2. ```bash
+  2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
+  
+ 	 ```bash
      # Unpack the archive
      tar -zxvf cudnn-10.0-linux-x64-v7.6.3.30.tgz 
      
@@ -115,8 +117,8 @@ Please follow the respective guide based on your system:
 * **TensorRT 6.0**
 
   1. Download the  [TensorRT 6X for Ubuntu 1804 and CUDA 10.0](https://developer.nvidia.com/nvidia-tensorrt-6x-download)
-  2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html)
-  3. Run:
+  2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html):
+  
      ```bash
      # unpack the package
      sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0-trt6.0.1.5-ga-20190913_1-1_amd64.deb
@@ -206,6 +208,12 @@ Please follow the respective guide based on your system:
    ```
    
    Else, you will need to troubleshoot the errors.
+   
+6. Activate bash completion by adding the following line to your `~/.bashrc`:
+   ```bash
+   source /usr/local/lib/bazel/bin/bazel-complete.bash
+   ```
+   
    
 
 #### Troubleshoot

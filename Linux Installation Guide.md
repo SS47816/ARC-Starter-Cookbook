@@ -221,20 +221,27 @@ Please follow the respective guide based on your system:
 ##### Issue #1 No matching distribution found for tensorflow-gpu==1.15
 	
 This is due to your pip is not the latest version (20.xxxx)
-Run:
-```bash
-pip install --upgarde pip
-```
+1. Run:
+   
+   ```bash
+   pip install --upgarde pip
+   ```
 	
 ##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
 	
-Open the file `install_dependencies.sh`
-Delete the `--user` flag located at Ln 27, Col 34
-Save the file, and run the cmd again
+1. Open the file `install_dependencies.sh`
+2. Delete the `--user` flag located at Ln 27, Col 34
+3. Save the file, and run the cmd again
 	
-	
-	
-	
+##### Issue #3 Failed to initialize NVML: Driver/library version mismatch
+
+1. Reboot
+2. export path variable by running: (I just wrote this to my .bashrc file)
+   
+   ```bash
+   export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
+   ```
+
 
 ### Nvidia Isaac Sim (Unity3D)
 

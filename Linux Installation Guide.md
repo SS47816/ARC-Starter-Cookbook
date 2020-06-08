@@ -92,19 +92,29 @@ Please follow the respective guide based on your system:
      # Example: CUDA 10.0 with NsightCompute-1.0
      export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
      ```
+     
+     Restart your terminal and check:
+     ```bash
+     nvcc -V
+     ```
 
 
-
-
-* **cuDNN 7.6.3**
+* **cuDNN 7.6.3** [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138)
 
   1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
 
   2. ```bash
-     s
+     # Unpack the archive
+     tar -zxvf cudnn-10.0-linux-x64-v7.6.3.30.tgz 
+     
+     # Move the unpacked contents to your CUDA directory
+     sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.0/lib64/
+     sudo cp  cuda/include/cudnn.h /usr/local/cuda-10.0/include/
+     
+     # Give read access to all users
+     sudo chmod a+r /usr/local/cuda-10.0/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
      ```
 
-  3. 
 
 * **TensorRT 6.0**
 

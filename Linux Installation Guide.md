@@ -139,17 +139,115 @@ Please follow the respective guide based on your system:
      dpkg -l | grep TensorRT
      ```
 
+### [Python Virtual Environment](https://docs.python.org/3/library/venv.html)
 
-* **Common Python Libraries**
-* **TensorFlow 1.15.0**
-* **Pytorch**
-
-1. To install dependencies, at the root folder of the Isaac SDK repository run the following command:
+1. Install:
 
    ```bash
+   sudo apt install python3-venv
+   ```
+
+2. Create an virtual environment:
+
+   ```bash
+   # Return to your `~/home/` directory
+   cd
+   
+   # For example, my virtual environment is named as `venv_isaac`
+   python3 -m venv venv_isaac
+   ```
+
+3. Activate this new virtual environment
+
+   ```bash
+   # For example, my virtual environment is named as `venv_isaac`
+   source venv_isaac/bin/activate
+   ```
+
+
+
+
+### Nvidia Isaac SDK
+
+[Official Installation Guide](https://docs.nvidia.com/isaac/isaac/doc/setup.html#cuda-requirements-for-machine-learning)
+
+1. Activate your virtual environment created just now
+
+   ```bash
+   # For example, my virtual environment is named as `venv_isaac`
+   source venv_isaac/bin/activate
+   ```
+
+2. Install Dependencies:
+
+   This includes:
+
+   * Bazel
+   * TensorFlow 1.15
+   * Pytorch
+
+   ```bash
+   # Navigate to your downloaded isaac sdk package
+   # For example, it is located at `~/home/` and has been renamed to `isaac_sdk`
+   cd 
+   cd isaac_sdk
+   
+   # Install dependencies
    engine/build/scripts/install_dependencies.sh
    ```
 
+3. Once the installation is finished, it will show:
+
+   ```bash
+   "Installation Succeeded"
+   ```
+   
+   Else, you will need to troubleshoot the errors.
+   
+
+#### Troubleshoot
+
+##### Issue #1 No matching distribution found for tensorflow-gpu==1.15
+	
+	This is due to your pip is not the latest version (20.xxxx)
+	Run:
+	```bash
+	pip install --upgarde pip
+	```
+	
+##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+	
+	Open the file `install_dependencies.sh`
+	Delete the `--user` flag located at Ln 27, Col 34
+	Save the file, and run the cmd again
+	
+	
+	
+	
+
+### Nvidia Isaac Sim (Unity3D)
+
+1. Download the Isaac Sim file from [here](https://developer.nvidia.com/isaac/downloads)
+2. Unzip it to `$HOME/isaac_sim_unity3d`
+
+#### Install Unity Editor for Editor Mode
+
+1. Create a [Unity account](https://id.unity.com/account/new)
+
+2. Download Unity Hub for Linux from the [Unity Forum](https://forum.unity.com/threads/unity-hub-v-1-3-2-is-now-available.594139/)
+
+3. Run:
+
+   ```bash
+   chmod +x UnityHub.AppImage
+   ./UnityHub.AppImage
+   ```
+
+4. Click the person icon in the upper right and select **Sign in**. Sign in with your Unity ID.
+
+5. Select **Installs** on the left, then select **Add**.
+
+6. In the **Add Unity Version** popup window, install 2019.3.x (no modules are required). The sample project for IsaacSim Unity3D is created with 2019.3.0f6, so any newer 2019.3 version can be used.
 
 
 
@@ -239,101 +337,6 @@ sudo apt-get install sublime-text
 
 
 
-
-### [Python Virtual Environment](https://docs.python.org/3/library/venv.html)
-
-1. Install:
-
-   ```bash
-   sudo apt install python3-venv
-   ```
-
-2. Create an virtual environment:
-
-   ```bash
-   # Return to your `~/home/` directory
-   cd
-   
-   # For example, my virtual environment is named as `venv_isaac`
-   python3 -m venv venv_isaac
-   ```
-
-3. Activate this new virtual environment
-
-   ```bash
-   # For example, my virtual environment is named as `venv_isaac`
-   source venv_isaac/bin/activate
-   ```
-
-
-
-
-
-### Nvidia Isaac SDK
-
-[Official Installation Guide](https://docs.nvidia.com/isaac/isaac/doc/setup.html#cuda-requirements-for-machine-learning)
-
-1. Activate your virtual environment created just now
-
-   ```bash
-   # For example, my virtual environment is named as `venv_isaac`
-   source venv_isaac/bin/activate
-   ```
-
-2. Install Dependencies:
-
-   This includes:
-
-   * Bazel
-   * TensorFlow 1.15
-   * Pytorch
-
-   ```bash
-   # Navigate to your downloaded isaac sdk package
-   # For example, it is located at `~/home/` and has been renamed to `isaac_sdk`
-   cd 
-   cd isaac_sdk
-   
-   # Install dependencies
-   engine/build/scripts/install_dependencies.sh
-   ```
-
-3. Once the installation is finished, it will show:
-
-   ```bash
-   "Installation Succeeded"
-   ```
-   
-   Else, you will need to troubleshoot the errors.
-   
-
-
-
-
-
-### Nvidia Isaac Sim (Unity3D)
-
-1. Download the Isaac Sim file from [here](https://developer.nvidia.com/isaac/downloads)
-2. Unzip it to `$HOME/isaac_sim_unity3d`
-
-#### Install Unity Editor for Editor Mode
-
-1. Create a [Unity account](https://id.unity.com/account/new)
-
-2. Download Unity Hub for Linux from the [Unity Forum](https://forum.unity.com/threads/unity-hub-v-1-3-2-is-now-available.594139/)
-
-3. Run:
-
-   ```bash
-   chmod +x UnityHub.AppImage
-   ./UnityHub.AppImage
-   ```
-
-4. Click the person icon in the upper right and select **Sign in**. Sign in with your Unity ID.
-
-5. Select **Installs** on the left, then select **Add**.
-
-6. In the **Add Unity Version** popup window, install 2019.3.x (no modules are required). The sample project for IsaacSim Unity3D is created with 2019.3.0f6, so any newer 2019.3 version can be used.
 
 
 

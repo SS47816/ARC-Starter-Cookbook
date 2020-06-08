@@ -39,7 +39,13 @@ Please follow the respective guide based on your system:
 
 ### Nvidia GPU Driver (version 440)
 
-1. Run:
+1. Check for available drivers:
+
+   ```bash
+   ubuntu-drivers devices
+   ```
+   
+2. Run:
 
    ```bash
    sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -48,9 +54,9 @@ Please follow the respective guide based on your system:
    sudo apt-get install nvidia-driver-440
    ```
 
-2. Reboot your system
+3. Reboot your system
 
-3. Check your GPU driver is properly installed:
+4. Check your GPU driver is properly installed:
 
    ```bash
    nvidia-smi
@@ -65,12 +71,12 @@ Please follow the respective guide based on your system:
 
 * **CUDA 10.0**
 
-  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal).
 
   2. Then run:
 
      ```bash
-     sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+     sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
      
      sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
      
@@ -90,17 +96,20 @@ Please follow the respective guide based on your system:
 
 
 
-
-
 * **cuDNN 7.6.3**
 
-  <TODO>
+  1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
+
+  2. ```bash
+     s
+     ```
+
+  3. 
 
 * **TensorRT 6.0**
 
-  <TODO>
-
-
+  1. Download the  [TensorRT 6X for Ubuntu 1804 and CUDA 10.0](https://developer.nvidia.com/nvidia-tensorrt-6x-download)
+  2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html)
 
 
 
@@ -410,9 +419,26 @@ conda env create -f environment.yml
 
 
 
-
-
 ### [Zoom](https://zoom.us/download#client_4meeting): Online Meetings
 
 
+
+## Troubleshooting
+
+### Fix Broken Libraries
+
+```bash
+apt --fix-broken install
+```
+
+
+
+### Remove CUDA & Nvidia Driver
+
+```bash
+sudo apt-get purge nvidia*
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo rm -rf /usr/local/cuda*
+```
 

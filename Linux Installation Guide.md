@@ -89,7 +89,7 @@ Please follow the respective guide based on your system:
      export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
      ```
      
-     Restart your terminal and check:
+  4. Restart your terminal and check:
      ```bash
      nvcc -V
      ```
@@ -153,15 +153,15 @@ Please follow the respective guide based on your system:
    # Return to your `~/home/` directory
    cd
    
-   # For example, my virtual environment is named as `venv_isaac`
-   python3 -m venv venv_isaac
+   # For example, my virtual environment is named as `venv-isaac`
+   python3 -m venv venv-isaac
    ```
 
 3. Activate this new virtual environment
 
    ```bash
-   # For example, my virtual environment is named as `venv_isaac`
-   source venv_isaac/bin/activate
+   # For example, my virtual environment is named as `venv-isaac`
+   source venv-isaac/bin/activate
    ```
 
 
@@ -177,8 +177,11 @@ Please follow the respective guide based on your system:
    # For example, my virtual environment is named as `venv_isaac`
    source venv_isaac/bin/activate
    ```
+2. Download the Issac-SDK(v20.1) package from the official website
 
-2. Install Dependencies:
+3. Unzip it, rename it, and move it to `~/home/` folder
+
+4. Install Dependencies:
 
    This includes:
 
@@ -187,8 +190,8 @@ Please follow the respective guide based on your system:
    * Pytorch
 
    ```bash
-   # Navigate to your downloaded isaac sdk package
-   # For example, it is located at `~/home/` and has been renamed to `isaac_sdk`
+   # Navigate to your downloaded isaac-sdk package
+   # For example, mine has been moved to `~/home/` and has been renamed to `isaac-sdk`
    cd 
    cd isaac_sdk
    
@@ -196,7 +199,7 @@ Please follow the respective guide based on your system:
    engine/build/scripts/install_dependencies.sh
    ```
 
-3. Once the installation is finished, it will show:
+5. Once the installation is finished, it will show:
 
    ```bash
    "Installation Succeeded"
@@ -209,17 +212,17 @@ Please follow the respective guide based on your system:
 
 ##### Issue #1 No matching distribution found for tensorflow-gpu==1.15
 	
-	This is due to your pip is not the latest version (20.xxxx)
-	Run:
-	```bash
-	pip install --upgarde pip
-	```
+This is due to your pip is not the latest version (20.xxxx)
+Run:
+```bash
+pip install --upgarde pip
+```
 	
 ##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
 	
-	Open the file `install_dependencies.sh`
-	Delete the `--user` flag located at Ln 27, Col 34
-	Save the file, and run the cmd again
+Open the file `install_dependencies.sh`
+Delete the `--user` flag located at Ln 27, Col 34
+Save the file, and run the cmd again
 	
 	
 	

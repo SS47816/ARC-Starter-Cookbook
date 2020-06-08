@@ -71,7 +71,7 @@ Please follow the respective guide based on your system:
 
 * **CUDA 10.0**
 
-  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal).
+  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
 
   2. Then run:
 

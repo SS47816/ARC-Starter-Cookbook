@@ -63,10 +63,6 @@ Please follow the respective guide based on your system:
    ```
 
 
-
-
-
-
 ### CUDA Toolkit for Machine Learning
 
 * **CUDA 10.0**
@@ -120,7 +116,28 @@ Please follow the respective guide based on your system:
 
   1. Download the  [TensorRT 6X for Ubuntu 1804 and CUDA 10.0](https://developer.nvidia.com/nvidia-tensorrt-6x-download)
   2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html)
-
+  3. Run:
+     ```bash
+     # unpack the package
+     sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0-trt6.0.1.5-ga-20190913_1-1_amd64.deb
+     
+     # add key
+     sudo apt-key add /var/nv-tensorrt-repo-cuda10.0-trt6.0.1.5-ga-20190913/7fa2af80.pub 
+     
+     # install
+     sudo apt-get update
+     sudo apt-get install tensorrt
+     
+     # if you are using python3
+     sudo apt-get install python3-libnvinfer-dev
+     # if you are using TensorFlow
+     sudo apt-get install uff-converter-tf
+     ```
+     
+  4. Check:
+     ```bash
+     dpkg -l | grep TensorRT
+     ```
 
 
 * **Common Python Libraries**

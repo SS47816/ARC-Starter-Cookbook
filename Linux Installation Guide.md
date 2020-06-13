@@ -101,6 +101,7 @@ Please follow the respective guide based on your system:
 
   2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
   
+
  	 ```bash
      # Unpack the archive
      tar -zxvf cudnn-10.0-linux-x64-v7.6.3.30.tgz 
@@ -219,7 +220,7 @@ Please follow the respective guide based on your system:
 #### Troubleshoot
 
 ##### Issue #1 No matching distribution found for tensorflow-gpu==1.15
-	
+
 This is due to your pip is not the latest version (20.xxxx)
 1. Run:
    
@@ -228,7 +229,7 @@ This is due to your pip is not the latest version (20.xxxx)
    ```
 	
 ##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
-	
+
 1. Open the file `install_dependencies.sh`
 2. Delete the `--user` flag located at Ln 27, Col 34
 3. Save the file, and run the cmd again
@@ -306,13 +307,12 @@ git pull
 
 ### [CMake](https://cmake.org/): project build tool
 
-1. Run:
+1. Run one of the two commands:
 
    ```bash
-   sudo apt install cmake
+   sudo apt install cmake # cmake 3.10 (recommended unless otherwise)
+   sudo snap install cmake # cmake 3.17
    ```
-
-
 
 
 

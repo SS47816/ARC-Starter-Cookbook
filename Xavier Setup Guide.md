@@ -97,3 +97,37 @@ The Official Guide is [here](https://docs.nvidia.com/sdk-manager/install-with-sd
 #### STEP 04
 
 Succeed!
+
+## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
+```bash
+# clone this guy's repo
+git clone https://github.com/jetsonhacks/installROSXavier.git
+cd installROSXavier
+
+# install
+./installROS.sh -p ros-melodic-desktop -p ros-melodic-rgbd-launch
+```
+
+## Developer Tools on Xavier
+Due to the ARM architechture used on Jetson products, most of the software can't be installed as normally. However, if you love these tools as I do, you can try build them from source alternatively.
+
+### Visual Studio Code
+Follow the steps in the `Build` Secion in the [official repo](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run)
+
+#### Install Dependences
+
+##### [Curl](https://linuxize.com/post/how-to-install-and-use-curl-on-ubuntu-18-04/)
+```bash
+sudo apt install curl
+```
+
+##### [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
+```bash
+# configure the repository
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+# install
+sudo apt update && sudo apt install yarn
+```
+

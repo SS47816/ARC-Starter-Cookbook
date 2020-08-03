@@ -106,12 +106,15 @@ cd installROSXavier
 
 # install
 ./installROS.sh -p ros-melodic-desktop -p ros-melodic-rgbd-launch
+
+# after the installation, setup the catkin_ws
+./setupCatkinWorkspace.sh
 ```
 
 ## Developer Tools on Xavier
 Due to the ARM architechture used on Jetson products, most of the software can't be installed as normally. However, if you love these tools as I do, you can try build them from source alternatively.
 
-### Visual Studio Code
+### Visual Studio Code (Not Done yet...)
 Follow the steps in the `Build` Secion in the [official repo](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run)
 
 #### Install Dependences

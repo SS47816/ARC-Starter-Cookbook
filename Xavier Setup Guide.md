@@ -70,17 +70,17 @@ The Official Guide is [here](https://docs.nvidia.com/sdk-manager/install-with-sd
 
 4. Enter your Host PC **Password**
 
-   ![](/home/ss/ss_ws/ARC-Starter-Cookbook/pics/sdkm-2-sudo-prompt.01.png)
+   ![sdkm-2-sudo-prompt.01](pics/sdkm-2-sudo-prompt.01.png)
 
 #### STEP 03
 
-![](/home/ss/ss_ws/ARC-Starter-Cookbook/pics/sdkm-3-installation-jetson.png)
+![](pics/sdkm-3-installation-jetson.png)
 
 1. Wait until the jobs are finished
 
 2. When you see this pop-up window:
 
-   ![sdkm-3-pre-flash-dialog-jetson.01](/home/ss/ss_ws/ARC-Starter-Cookbook/pics/sdkm-3-pre-flash-dialog-jetson.01.png)
+   ![sdkm-3-pre-flash-dialog-jetson.01](pics/sdkm-3-pre-flash-dialog-jetson.01.png)
 
 3. Go to your Xavier Monitor and Complete the Ubuntu '**System configuration wizard**' on your Jetson AGX Xavier.
 
@@ -92,7 +92,7 @@ The Official Guide is [here](https://docs.nvidia.com/sdk-manager/install-with-sd
 
 7. When you see this pop-up window:
 
-   ![sdkm-3-post-flash-dialog-jetson.01](/home/ss/ss_ws/ARC-Starter-Cookbook/pics/sdkm-3-post-flash-dialog-jetson.01.png)
+   ![sdkm-3-post-flash-dialog-jetson.01](pics/sdkm-3-post-flash-dialog-jetson.01.png)
 
 #### STEP 04
 

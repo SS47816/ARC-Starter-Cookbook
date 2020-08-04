@@ -1,9 +1,9 @@
 # ARC-Starter-Cookbook
 Cookbook for new Robotics students
 
-> by [SS47816](https://github.com/SS47816)
+> by [SS47816](https://github.com/SS47816), [stevelimyh](https://github.com/stevelimyh)
 >
-> @NUS Advanced Robotics Centre
+> @ NUS Advanced Robotics Centre
 >
 > MIT License
 

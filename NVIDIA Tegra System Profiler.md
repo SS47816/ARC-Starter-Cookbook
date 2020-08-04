@@ -4,7 +4,7 @@ Cookbook on how to use NVIDIA Tegra System Profiler based on [this video](https:
 
 > by [SS47816](https://github.com/SS47816)
 >
-> @NUS Advanced Robotics Centre
+> @ NUS Advanced Robotics Centre
 >
 > MIT License
 

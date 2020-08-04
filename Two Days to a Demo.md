@@ -4,7 +4,7 @@ Cookbook for the [Nvidia Official Demos on Jetson Xavier](https://developer.nvid
 
 > by [stevelimyh](https://github.com/stevelimyh), [SS47816](https://github.com/SS47816)
 >
-> @NUS Advanced Robotics Centre
+> @ NUS Advanced Robotics Centre
 >
 > MIT License
 

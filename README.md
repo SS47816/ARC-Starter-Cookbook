@@ -13,6 +13,7 @@ Cookbook for new Robotics students
 
 ### Welcome Drink: [Linux Installation Guide](Linux\ Installation\ Guide.md)
 
+
 ### Snacks: [Xavier Setup Guide](Xavier\ Setup\ Guide.md)
 
 ### Soup: 

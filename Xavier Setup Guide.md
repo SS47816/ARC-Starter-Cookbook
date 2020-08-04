@@ -114,23 +114,18 @@ cd installROSXavier
 ## Developer Tools on Xavier
 Due to the ARM architechture used on Jetson products, most of the software can't be installed as normally. However, if you love these tools as I do, you can try build them from source alternatively.
 
-### Visual Studio Code (Not Done yet...)
-Follow the steps in the `Build` Secion in the [official repo](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run)
+### Visual Studio Code ([This Youtube Video](https://www.youtube.com/watch?time_continue=191&v=_ODzBmI5lPA&feature=emb_logo))
 
-#### Install Dependences
-
-##### [Curl](https://linuxize.com/post/how-to-install-and-use-curl-on-ubuntu-18-04/)
+#### Install
 ```bash
 sudo apt install curl
+
+cd Downloads
+curl -L https://github.com/toolboc/vscode/releases/download/1.32.3/code-oss_1.32.3-arm64.deb -o code-oss_1.32.3-arm64.deb
+
+sudo dpkg -i code-oss_1.32.3-arm64.deb
 ```
 
-##### [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
-```bash
-# configure the repository
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
-# install
-sudo apt update && sudo apt install yarn
-```
+#### Use
+Go to your programs and find `Code-OSS`
 

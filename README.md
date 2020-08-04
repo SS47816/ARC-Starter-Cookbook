@@ -9,10 +9,16 @@ Cookbook for new Robotics students
 
 
 
-## Directory
+## Menu
 
-### Cookbook #0: Linux Installation Guide
+### Welcome Drink: [Linux Installation Guide](Linux\ Installation\ Guide.md)
 
-### Cookbook #1: 
+### Snacks: [Xavier Setup Guide](Xavier\ Setup\ Guide.md)
 
-### Cookbook #2: 
+### Soup: 
+
+### Main Course: [Two Days to a Demo](Two\ Days\ to\ a\ Demo.md)
+
+### Dessert: 
+
+### After Dinner Drink: [NVIDIA Tegra System Profiler]()

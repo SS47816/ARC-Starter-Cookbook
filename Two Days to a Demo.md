@@ -2,7 +2,7 @@
 
 Cookbook for the [Nvidia Official Demos on Jetson Xavier](https://developer.nvidia.com/embedded/twodaystoademo)
 
-> by [SS47816](https://github.com/SS47816)
+> by [stevelimyh](https://github.com/stevelimyh), [SS47816](https://github.com/SS47816)
 >
 > @NUS Advanced Robotics Centre
 >

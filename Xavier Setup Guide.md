@@ -98,6 +98,8 @@ The Official Guide is [here](https://docs.nvidia.com/sdk-manager/install-with-sd
 
 Succeed!
 
+---
+
 ## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
 ```bash
 # clone this guy's repo
@@ -110,6 +112,8 @@ cd installROSXavier
 # after the installation, setup the catkin_ws
 ./setupCatkinWorkspace.sh
 ```
+
+---
 
 ## Developer Tools on Xavier
 Due to the ARM architechture used on Jetson products, most of the software can't be installed as normally. However, if you love these tools as I do, you can try build them from source alternatively.
@@ -129,3 +133,5 @@ sudo dpkg -i code-oss_1.32.3-arm64.deb
 #### Use
 Go to your programs and find `Code-OSS`
 
+
+---

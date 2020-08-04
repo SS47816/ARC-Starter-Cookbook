@@ -283,7 +283,7 @@ sudo apt update
 sudo apt install git
 ```
 
-**Note: **When you use git for the first time on your machine, you need to set your user-name and your email address: 
+**Note:** When you use git for the first time on your machine, you need to set your user-name and your email address: 
 
 ```bash
 # Set user-name

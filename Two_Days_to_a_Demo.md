@@ -15,7 +15,7 @@ Cookbook for the [Nvidia Official Demos on Jetson Xavier](https://developer.nvid
 
 ### Prerequisites
 #### Setting up Jetson with JetPack
-JetPack should be ready on your Xavier if you followed the steps in our [`Xavier Setup Guide.md`](Xavier\ Setup\ Guide.md).
+JetPack should be ready on your Xavier if you followed the steps in our [Xavier Setup Guide](https://github.com/SS47816/ARC-Starter-Cookbook/blob/master/Xavier_Setup_Guide.md).
 
 #### [Building the Inferencing Library](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md)
 A library of TensorRT-accelerated deep learning networks for image recognition, object detection with localization (i.e. bounding boxes), and semantic segmentation. Noted that GoogleNet and ResNet-18 networks are selected and downloaded during the [build step](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md#downloading-models).

@@ -10,9 +10,112 @@ Cookbook for the [Nvidia Official Demos on Jetson Xavier](https://developer.nvid
 
 ---
 
-## Hellow AI World
+## [Hello AI World](https://github.com/dusty-nv/jetson-inference#hello-ai-world)
 ![Hello_AI_World](pics/Hello_AI_World.png)
 
+### Prerequisites
+#### Setting up Jetson with JetPack
+JetPack should be ready on your Xavier if you followed the steps in our [`Xavier Setup Guide.md`](Xavier\ Setup\ Guide.md).
+
+#### [Building the Inferencing Library](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md)
+A library of TensorRT-accelerated deep learning networks for image recognition, object detection with localization (i.e. bounding boxes), and semantic segmentation. Noted that GoogleNet and ResNet-18 networks are selected and downloaded during the [build step](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md#downloading-models).
+
+Summary of the commands to download, build, and install the project:
+```bash
+$ cd ~
+$ sudo apt-get install git cmake
+$ git clone --recursive https://github.com/dusty-nv/jetson-inference
+$ cd jetson-inference
+$ mkdir build
+$ cd build
+$ cmake ../
+$ make -j$(nproc)
+$ sudo make install
+$ sudo ldconfig
+```
+
+### [Image Classification with ImageNet](https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-console-2.md)
+In this section, you will be going through a tutorial on **image recognition**, using classifcation networks that have been trained on large datasets to identify scenes and objects.
+
+#### [ImageNet Sample Program]
+- [imagenet.cpp](https://github.com/dusty-nv/jetson-inference/blob/master/examples/imagenet/imagenet.cpp)
+- [imagenet.py](https://github.com/dusty-nv/jetson-inference/blob/master/python/examples/imagenet.py)
+
+---
+
+#### [Using ImageNet on Jetson]
+```bash
+$ cd jetson-inference/build/aarch64/bin
+
+# C++
+$ ./imagenet-console --network=googlenet images/orange_0.jpg output_0.jpg     # --network flag is optional (default is googlenet)
+
+# Python
+$ ./imagenet-console.py --network=googlenet images/orange_0.jpg output_0.jpg  # --network flag is optional (default is googlenet)
+
+```
+
+The first time you run each model, TensorRT will take a few minutes to optimize the network, so future runs using the model will load faster.
+
+![ImageNet_0utput_0](pics/output_0.jpg)
+
+```bash
+# C++
+$ ./imagenet images/strawberry_0.jpg output_1.jpg
+
+# Python
+$ ./imagenet.py images/strawberry_0.jpg output_1.jpg
+
+```
+
+![ImageNet_0utput_1](pics/output_1.jpg)
+
+---
+
+#### [Using Different Classification Models]
+For this tutorial, GoogleNet and ResNet-18 networks are downloaded during the build step.
+
+You can download additional networks, run the [Model Downloader](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md#downloading-models) tool
+
+```bash
+$ cd jetson-inference/tools
+$ ./download-models.sh
+
+```
+
+The default classification model for the imagenet program is GoogleNet. Now, let's change that to ResNet-18:
+
+
+```bash
+# C++
+$ ./imagenet --network=resnet-18 images/coral.jpg output_coral.jpg
+
+# Python
+$ ./imagenet.py --network=resnet-18 images/coral.jpg output_coral.jpg
+
+```
+
+![ImageNet_0utput_Coral](pics/output_coral.jpg)
+
+---
+
+#### [Processing Video]
+The imagenet program can handle [different types of streams](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md) other than image.
+Now let's try running it on a test video from disk:
+
+```bash
+# Download test video (thanks to jell.yfish.us)
+$ wget https://nvidia.box.com/shared/static/tlswont1jnyu3ix2tbf7utaekpzcx4rc.mkv -O jellyfish.mkv
+
+# C++
+$ ./imagenet --network=resnet-18 jellyfish.mkv jellyfish_resnet18.mkv
+
+# Python
+$ ./imagenet.py --network=resnet-18 jellyfish.mkv jellyfish_resnet18.mkv
+
+```
+The program output should be similar to this video.
+<a href="https://www.youtube.com/watch?v=GhTleNPXqyU" target="_blank"><img src=https://github.com/dusty-nv/jetson-inference/raw/dev/docs/images/imagenet-jellyfish-video.jpg width="750"></a>
 
 ---
 

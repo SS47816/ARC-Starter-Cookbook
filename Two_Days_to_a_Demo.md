@@ -57,7 +57,7 @@ $ ./imagenet-console.py --network=googlenet images/orange_0.jpg output_0.jpg  # 
 
 The first time you run each model, TensorRT will take a few minutes to optimize the network, so future runs using the model will load faster.
 
-![ImageNet_Output_0](pics/output_0.jpg)
+![ImageNet_Output_0](pics/output_0.jpg | width=650)
 
 ```bash
 # C++
@@ -68,7 +68,7 @@ $ ./imagenet.py images/strawberry_0.jpg output_1.jpg
 
 ```
 
-![ImageNet_Output_1](pics/output_1.jpg)
+![ImageNet_Output_1](pics/output_1.jpg | width=650)
 
 ---
 
@@ -95,7 +95,7 @@ $ ./imagenet.py --network=resnet-18 images/coral.jpg output_coral.jpg
 
 ```
 
-![ImageNet_Output_Coral](pics/output_coral.jpg)
+![ImageNet_Output_Coral](pics/output_coral.jpg | width=650)
 
 ---
 

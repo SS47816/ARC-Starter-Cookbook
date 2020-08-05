@@ -41,17 +41,20 @@ $ sudo ldconfig
 
 ### Install ROS (Melodic)
 
-#### Installation
+#### Installation and Setup `catkin_ws`
 The installation steps on Xavier is no different from the steps on PC
-You may follow the [ROS official installation guide](http://wiki.ros.org/melodic/Installation/Ubuntu) or if you are lazy, just follow the steps in our [`Xavier Setup Guide.md`](Xavier\ Setup\ Guide.md). 
+You may follow the [ROS official installation guide](http://wiki.ros.org/melodic/Installation/Ubuntu) or if you are lazy, just use the condensed code below (from [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)):
 
-#### Setup `catkin_ws`
 ```bash
-# ROS Melodic
-$ cd
-$ mkdir catkin_ws && cd catkin_ws
-$ catkin_make
-$ source devel/setup.bash 
+# clone this guy's repo
+git clone https://github.com/jetsonhacks/installROSXavier.git
+cd installROSXavier
+
+# install
+./installROS.sh -p ros-melodic-desktop -p ros-melodic-rgbd-launch
+
+# after the installation, setup the catkin_ws
+./setupCatkinWorkspace.sh
 ```
 
 #### Testing

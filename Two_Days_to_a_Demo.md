@@ -171,3 +171,13 @@ However, you can still try some cool stuffs without a camera, by reading a video
 ---
 
 ## [Advanced - TensorFlow to TensorRT Image Classification](https://github.com/NVIDIA-AI-IOT/tf_to_trt_image_classification)
+
+### 1. Setup
+
+### 2. Creating Frozen Graphs
+
+### 3. Converting Frozen Graphs
+
+### 4. Executing TensorRT
+
+### 5. Benchmarking

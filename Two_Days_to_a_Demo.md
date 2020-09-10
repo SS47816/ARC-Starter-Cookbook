@@ -2,7 +2,7 @@
 
 Cookbook for the [Nvidia Official Demos on Jetson Xavier](https://developer.nvidia.com/embedded/twodaystoademo)
 
-> by [stevelimyh](https://github.com/stevelimyh), [SS47816](https://github.com/SS47816)
+> by [stevelimyh](https://github.com/stevelimyh), [SS47816](https://github.com/SS47816), [nevinngyt](https://github.com/nevinngyt)
 >
 > @ NUS Advanced Robotics Centre
 >
@@ -33,6 +33,7 @@ $ make -j$(nproc)
 $ sudo make install
 $ sudo ldconfig
 ```
+## Inference
 
 ### [Image Classification with ImageNet](https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-console-2.md)
 In this section, you will be going through a tutorial on **image recognition**, using classifcation networks that have been trained on large datasets to identify scenes and objects.
@@ -118,6 +119,19 @@ The program output should be similar to this video.
 <a href="https://www.youtube.com/watch?v=GhTleNPXqyU" target="_blank"><img src=https://github.com/dusty-nv/jetson-inference/raw/dev/docs/images/imagenet-jellyfish-video.jpg width="750"></a>
 
 ---
+### Locating Objects with DetectNet
+
+
+### Semantic Segmentation with Segnet
+
+## Training
+
+### Transfer Learning in PyTorch
+
+### Classification/Recognition
+
+### Object Detection 
+
 
 ## Deploying Deep Learning
 ![deep-vision-primitives](pics/deep-vision-primitives.png)

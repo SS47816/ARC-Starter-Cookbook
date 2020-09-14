@@ -157,7 +157,7 @@ To find out the full list of classes the DetectNet models are trained to detect,
 
 **Processing a Directory or Sequence of Images/ Videos**
 
-If you have multiple images or videos that you'd like to process at one time, first follow the instructions in this link ( https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#sequences) to load the images, then you can launch the detectnet program with the path to a directory that contains images or a wildcard sequence:
+If you have multiple images or videos that you'd like to process at one time, first follow the instructions in this link ( https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#sequences) to load your images/video files, then you can launch the detectnet program with the path to a directory that contains images or a wildcard sequence:
 
 ```
 # C++
@@ -321,7 +321,7 @@ This above example is from a dataset called Cityscapes. Please refer to [here](h
 
 **Processing images/ Video**
 
-Please refer to [here](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#sequences) for loading your files first. Then you can launch the program with the path to the directory that contains images or a wildcard sequence:
+Please refer to [here](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#sequences) to load your files first. Then you can launch the program with the path to the directory that contains images or a wildcard sequence:
 
 **C++**
 

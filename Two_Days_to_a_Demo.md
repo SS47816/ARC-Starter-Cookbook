@@ -141,7 +141,8 @@ Note that there are additional command line parameters available for loading cus
 
 Here are some examples of detecting pedestrians in images with the default SSD-Mobilenet-v2 model:
 
-picture
+![detectnet](/pics/detectnet-ssd-peds-1.jpg)
+
 
 The following code is run on the console terminal to execute the model:
 ```
@@ -315,7 +316,8 @@ $ ./segnet --network=fcn-resnet18-cityscapes images/city_0.jpg output.jpg
 $ ./segnet.py --network=fcn-resnet18-cityscapes images/city_0.jpg output.jpg
 ``
 
-PICTURE
+![segnet](/pics/segmentation-city.jpg)
+
 
 This above example is from a dataset called Cityscapes. Please refer to [here](https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md) for more examples from other datasets
 

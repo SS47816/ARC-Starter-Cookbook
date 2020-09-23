@@ -18,6 +18,14 @@ This guide is meant to showcase the Nvidea Jetson SDK capabilities of imagenet f
 #### Setting up Jetson with JetPack
 JetPack should be ready on your Xavier if you followed the steps in our [Xavier Setup Guide](https://github.com/SS47816/ARC-Starter-Cookbook/blob/master/Xavier_Setup_Guide.md). (Please refer to this link if you have not set up Jetpack on your Xavier)
 
+### Some good resources to have a better background understanding before trying out
+
+- [Information about Inference](https://blogs.gartner.com/paul-debeasi/2019/02/14/training-versus-inference/#:~:text=Inference%3A%20Inference%20refers%20to%20the,algorithm%20to%20make%20a%20prediction.)
+- [Image Detection and Object Localisation](https://machinelearningmastery.com/object-recognition-with-deep-learning/)
+- [Semantic Segmentation](https://nanonets.com/blog/semantic-image-segmentation-2020/)
+
+It will also be good to familiarise with some linux command ([Cheatsheet](https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/). But this guide should be sufficient to follow the linux terminal commands.
+
 #### [Building the Inferencing Library](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md)
 A library of TensorRT-accelerated deep learning networks for image recognition, object detection with localization (i.e. bounding boxes), and semantic segmentation. Noted that GoogleNet and ResNet-18 networks are selected and downloaded during the [build step](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md#downloading-models).
 
@@ -349,22 +357,6 @@ The segnet.cpp / segnet.py sample that we used previously can also be used for r
 For more information or reference for SegNet, please refer to these links
 - [Semantic segmentation with SegNet 1](https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-camera-2.md)
 - [Running live camera demo](https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md)
-
-
-
-
-## Training
-
-### Transfer Learning in PyTorch
-
-### Classification/Recognition
-
-### Object Detection 
-
-
-## Deploying Deep Learning
-![deep-vision-primitives](pics/deep-vision-primitives.png)
-
 
 ---
 

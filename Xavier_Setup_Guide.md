@@ -14,10 +14,9 @@ Cookbook for new Robotics students
 
 * A Host PC with Ubuntu 18.04/16.04
 * An entire Nvidia AGX Xavier Developer Kit Set (Standard Version)
-* An Ethernet Cable
 * A HDMI Cable
 * A Monitor, a set of Mouse plus Keyboard for the Xavier
-* Internet Connection (with a Internet Router/Port nearby)
+* Internet Connection (with a Internet Router/Port nearby), with An Ethernet Cable or a Wifi card to plug into a M2 connector or a wifi dongle
 
 
 
@@ -41,7 +40,7 @@ Download SDK Manager (v1.1.0) on your Host PC from the [Nvidia Website](https://
 
 ### Flash the Jeston OS for Xavier
 
-The Official Guide is [here](https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html).
+Follow this Official Guide [here](https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html).
 
 #### Login
 

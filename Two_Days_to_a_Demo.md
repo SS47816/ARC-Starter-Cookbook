@@ -24,7 +24,7 @@ JetPack should be ready on your Xavier if you followed the steps in our [Xavier 
 - [Image Detection and Object Localisation](https://machinelearningmastery.com/object-recognition-with-deep-learning/)
 - [Semantic Segmentation](https://nanonets.com/blog/semantic-image-segmentation-2020/)
 
-It will also be good to familiarise with some linux command ([Cheatsheet](https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/). But this guide should be sufficient to follow the linux terminal commands.
+It will also be good to familiarise with some linux command ([Cheatsheet](https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/)). But this guide should be sufficient to follow the linux terminal commands.
 
 #### [Building the Inferencing Library](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md)
 A library of TensorRT-accelerated deep learning networks for image recognition, object detection with localization (i.e. bounding boxes), and semantic segmentation. Noted that GoogleNet and ResNet-18 networks are selected and downloaded during the [build step](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md#downloading-models).
@@ -405,14 +405,3 @@ However, you can still try some cool stuffs without a camera, by reading a video
 
 ---
 
-## [Advanced - TensorFlow to TensorRT Image Classification](https://github.com/NVIDIA-AI-IOT/tf_to_trt_image_classification)
-
-### 1. Setup
-
-### 2. Creating Frozen Graphs
-
-### 3. Converting Frozen Graphs
-
-### 4. Executing TensorRT
-
-### 5. Benchmarking

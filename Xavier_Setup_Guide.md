@@ -16,7 +16,7 @@ Cookbook for new Robotics students
 * An entire Nvidia AGX Xavier Developer Kit Set (Standard Version)
 * A HDMI Cable
 * A Monitor, a set of Mouse plus Keyboard for the Xavier
-* Internet Connection (with a Internet Router/Port nearby), with An Ethernet Cable or a Wifi card to plug into a M2 connector or a wifi dongle
+* Internet Connection (with a Internet Router/Port nearby), with an Ethernet Cable OR a Wifi card to plug into a M2 connector OR a Wifi dongle
 
 
 

@@ -37,7 +37,7 @@ Please follow the respective guide based on your system:
 
 
 
-### Nvidia GPU Driver (version 440)
+### Nvidia GPU Driver (version 450)
 
 1. Check for available drivers:
 
@@ -50,8 +50,8 @@ Please follow the respective guide based on your system:
    ```bash
    sudo add-apt-repository ppa:graphics-drivers/ppa
    sudo apt-get update
-   # version 440 is recommended
-   sudo apt-get install nvidia-driver-440
+   # version 450 is recommended
+   sudo apt-get install nvidia-driver-450
    ```
 
 3. Reboot your system
@@ -65,9 +65,9 @@ Please follow the respective guide based on your system:
 
 ### CUDA Toolkit for Machine Learning
 
-* **CUDA 10.0**
+* **CUDA 10.2**
 
-  1. Download CUDA Toolkit 10.0 from [here](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork).
+  1. Download CUDA Toolkit 10.2 from [here](https://developer.nvidia.com/cuda-10.2-download-archive).
 
   2. Then run:
 
@@ -95,11 +95,10 @@ Please follow the respective guide based on your system:
      ```
 
 
-* **cuDNN 7.6.3** 
-
-  1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
-
-  2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
+* **cuDNN 8.0.0 (Developer Preview)** 
+1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
+  
+2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
   
 
  	 ```bash
@@ -115,7 +114,7 @@ Please follow the respective guide based on your system:
      ```
 
 
-* **TensorRT 6.0**
+* **TensorRT 7.1.3**
 
   1. Download the  [TensorRT 6X for Ubuntu 1804 and CUDA 10.0](https://developer.nvidia.com/nvidia-tensorrt-6x-download)
   2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html):

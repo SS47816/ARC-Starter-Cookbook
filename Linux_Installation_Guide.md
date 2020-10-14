@@ -35,8 +35,6 @@ Please follow the respective guide based on your system:
 
 
 
-
-
 ### Nvidia GPU Driver (version 450)
 
 1. Check for available drivers:
@@ -67,64 +65,69 @@ Please follow the respective guide based on your system:
 
 * **CUDA 10.2**
 
-  1. Download CUDA Toolkit 10.2 from [here](https://developer.nvidia.com/cuda-10.2-download-archive).
+  1. Download the Nvidia SDK Manager from [here](https://developer.nvidia.com/nvidia-sdk-manager)
 
-  2. Then run:
+  2. Open the Nvidia SDK Manager and Install the the libraries compatible with JetPack 4.4 on the Host Machine
 
+  3. Post-installation actions: (from the [official doc](https://docs.nvidia.com/cuda/archive/10.2/cuda-installation-guide-linux/index.html#ubuntu-installation))
+  
      ```bash
-     sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
-     
-     sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-     
-     sudo apt-get update
-     
-     sudo apt-get install cuda-10-0
+     # Add this line in the .bashrc file:
+     export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
      ```
-
-  3. Post-installation actions:
-
-     ```bash
-     # To add this path to the PATH variable:
-     # Example: CUDA 10.0 with NsightCompute-1.0
-     export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
-     ```
-     
+  
   4. Restart your terminal and check:
-     ```bash
+  
+   ```bash
      nvcc -V
+   ```
+  
+  5. Compile the sample codes:
+  
+     ```bash
+     # Go to the sample code folder
+     cd /usr/local/cuda-10.2/samples
+     
+     # Compile with errors ignored: 
+     make -k
+     # The errors in CUDA 10.2 are due to: https://github.com/NVIDIA/cuda-samples/issues/22
      ```
+  
+     
 
 
-* **cuDNN 8.0.0 (Developer Preview)** 
-1. Download the [cuDNN v7.6.3, for CUDA 10.0](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10)
+* **cuDNN v8.0.3**
+
+  > JetPack 4.4 is using cuDNN 8.0.0 (Developer Preview)
+1. Download the [cuDNN v8.0.3, for CUDA 10.2](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10), select the [cuDNN Library for Linux (x86)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.0.3.33/10.2_20200825/cudnn-10.2-linux-x64-v8.0.3.33.tgz) one
   
 2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
-  
 
- 	 ```bash
-     # Unpack the archive
-     tar -zxvf cudnn-10.0-linux-x64-v7.6.3.30.tgz 
-     
-     # Move the unpacked contents to your CUDA directory
-     sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.0/lib64/
-     sudo cp  cuda/include/cudnn.h /usr/local/cuda-10.0/include/
-     
-     # Give read access to all users
-     sudo chmod a+r /usr/local/cuda-10.0/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-     ```
+   ```bash
+   # Unpack the archive
+   cd Downloads
+   tar -zxvf cudnn-10.2-linux-x64-v8.0.3.33.tgz
+   
+   # Move the unpacked contents to your CUDA directory
+   sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.2/lib64/
+   sudo cp  cuda/include/cudnn.h /usr/local/cuda-10.2/include/
+    
+   # Give read access to all users
+   sudo chmod a+r /usr/local/cuda-10.2/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+   ```
 
 
 * **TensorRT 7.1.3**
 
-  1. Download the  [TensorRT 6X for Ubuntu 1804 and CUDA 10.0](https://developer.nvidia.com/nvidia-tensorrt-6x-download)
+  1. Download the  [TensorRT 7X for Ubuntu 1804 and CUDA 10.2](https://developer.nvidia.com/nvidia-tensorrt-7x-download)
   2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html):
   
      ```bash
-     # unpack the package
-     sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0-trt6.0.1.5-ga-20190913_1-1_amd64.deb
+     # Install TensorRT from the Debian local repo package
+     sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.2-trt7.1.3.4-ga-20200617_1-1_amd64.deb
      
      # add key
-     sudo apt-key add /var/nv-tensorrt-repo-cuda10.0-trt6.0.1.5-ga-20190913/7fa2af80.pub 
+     sudo apt-key add /var/nv-tensorrt-repo-cuda10.2-trt7.1.3.4-ga-20200617/7fa2af80.pub
      
      # install
      sudo apt-get update
@@ -132,7 +135,7 @@ Please follow the respective guide based on your system:
      
      # if you are using python3
      sudo apt-get install python3-libnvinfer-dev
-     # if you are using TensorFlow
+     # if you are using TensorRT with TensorFlow
      sudo apt-get install uff-converter-tf
      ```
      

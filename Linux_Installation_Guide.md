@@ -356,12 +356,6 @@ sudo apt-get install sublime-text
 
 
 
-
-
-
-
-
-
 ### [VS Code](https://code.visualstudio.com/): an Integrated Development Environment (IDE)
 
 #### Recommended Extensions:
@@ -370,6 +364,8 @@ sudo apt-get install sublime-text
 * Python
 * Visual Studio IntelliCode
 * GitLens
+* Docker
+* Visual Studio IntelliCode
 * ROS
 * TabNine (Optional, it's magic!)
 

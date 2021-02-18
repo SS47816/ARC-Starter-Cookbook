@@ -99,8 +99,16 @@ Succeed!
 
 ---
 
+## [Install SSD on Xavier](https://medium.com/@ramin.nabati/installing-an-nvme-ssd-drive-on-nvidia-jetson-xavier-37183c948978)
+You can refer to this [blog](https://medium.com/@ramin.nabati/installing-an-nvme-ssd-drive-on-nvidia-jetson-xavier-37183c948978)
+
+
+---
+
 ## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
+
 ```bash
+#!bash
 # clone this guy's repo
 git clone https://github.com/jetsonhacks/installROSXavier.git
 cd installROSXavier
@@ -112,6 +120,36 @@ cd installROSXavier
 ./setupCatkinWorkspace.sh
 ```
 
+## [OpenCV 3.4.3](https://github.com/jetsonhacks/buildOpenCVXavier)
+The following command is extracted from this [Blog](https://www.jetsonhacks.com/2018/11/08/build-opencv-3-4-on-nvidia-jetson-agx-xavier-developer-kit/)
+
+```bash
+#!bash
+# Remove the OpenCV installed by JetPack before performing this script installation
+sudo apt-get purge libopencv*
+
+# To download the source, build and install OpenCV
+git clone https://github.com/jetsonhacks/buildOpenCVXavier.git
+cd buildOpenCVXavier
+git checkout v1.0
+./buildOpenCV.sh
+
+# You can remove the sources and build files after you are done
+./removeOpenCVSources.sh
+
+# Test the OpenCV with the programs in the `Examples` folder
+cd Examples/
+g++ -o gstreamer_view -Wall -std=c++11 gstreamer_view.cpp $(pkg-config –libs opencv)
+./gstreamer_view
+
+# To run the Canny detection demo (Python 2.7):
+python cannyDetection.py
+
+# With Python 3.3:
+python3 cannyDetection.py
+
+```
+
 ---
 
 ## Developer Tools on Xavier
@@ -121,6 +159,7 @@ Due to the ARM architechture used on Jetson products, most of the software can't
 
 #### Install
 ```bash
+#!bash
 sudo apt install curl
 
 cd Downloads
@@ -130,7 +169,15 @@ sudo dpkg -i code-oss_1.32.3-arm64.deb
 ```
 
 #### Use
-Go to your programs and find `Code-OSS`
+Go to your programs and you can find `Code-OSS`
 
+By default, the command to launch vscode from terminal is `code-oss`.
+To change it to `code`:
+
+```bash
+#!bash
+cd /usr/bin/
+sudo ln -s code-oss code
+```
 
 ---

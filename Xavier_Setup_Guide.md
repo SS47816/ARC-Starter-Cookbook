@@ -115,6 +115,15 @@ git push
 ```
 
 ---
+## Jetson-Stats
+
+```
+sudo apt install python3-pip
+sudo -H pip3 install -U jetson-stats
+
+```
+
+---
 
 ## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
 
@@ -140,10 +149,25 @@ The following command is extracted from this [Blog](https://www.jetsonhacks.com/
 sudo apt-get purge libopencv*
 
 # To download the source, build and install OpenCV
-git clone https://github.com/jetsonhacks/buildOpenCVXavier.git
-cd buildOpenCVXavier
-git checkout v1.0
-./buildOpenCV.sh
+wget https://raw.githubusercontent.com/JetsonHacksNano/buildOpenCV/master/buildOpenCV.sh
+chmod +x buildOpenCV.sh
+
+# Change ARCH_BIN=7.2 (Xavier)
+# DOWNLOAD_OPENCV_EXTRAS=YES
+./buildOpenCV
+```
+
+## Eigen 3.3.9
+```
+sudo rm -rf /usr
+
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip
+unzip eigen-3.3.9.zip
+cd eigen-3.3.9 && mkdir build
+cd build && cmake ..
+sudo make install
+```
+
 
 # You can remove the sources and build files after you are done
 ./removeOpenCVSources.sh

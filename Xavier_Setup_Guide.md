@@ -125,72 +125,11 @@ sudo -H pip3 install -U jetson-stats
 
 ---
 
-## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
-
-```bash
-#!bash
-# clone this guy's repo
-git clone https://github.com/jetsonhacks/installROSXavier.git
-cd installROSXavier
-
-# install
-./installROS.sh -p ros-melodic-desktop -p ros-melodic-rgbd-launch
-
-# after the installation, setup the catkin_ws
-./setupCatkinWorkspace.sh
-```
-
-## [OpenCV 3.4.3](https://github.com/jetsonhacks/buildOpenCVXavier)
-The following command is extracted from this [Blog](https://www.jetsonhacks.com/2018/11/08/build-opencv-3-4-on-nvidia-jetson-agx-xavier-developer-kit/)
-
-```bash
-#!bash
-# Remove the OpenCV installed by JetPack before performing this script installation
-sudo apt-get purge libopencv*
-
-# To download the source, build and install OpenCV
-wget https://raw.githubusercontent.com/JetsonHacksNano/buildOpenCV/master/buildOpenCV.sh
-chmod +x buildOpenCV.sh
-
-# Change ARCH_BIN=7.2 (Xavier)
-# DOWNLOAD_OPENCV_EXTRAS=YES
-./buildOpenCV
-```
-
-## Eigen 3.3.9
-```
-sudo rm -rf /usr
-
-wget https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip
-unzip eigen-3.3.9.zip
-cd eigen-3.3.9 && mkdir build
-cd build && cmake ..
-sudo make install
-```
-
-
-# You can remove the sources and build files after you are done
-./removeOpenCVSources.sh
-
-# Test the OpenCV with the programs in the `Examples` folder
-cd Examples/
-g++ -o gstreamer_view -Wall -std=c++11 gstreamer_view.cpp $(pkg-config –libs opencv)
-./gstreamer_view
-
-# To run the Canny detection demo (Python 2.7):
-python cannyDetection.py
-
-# With Python 3.3:
-python3 cannyDetection.py
-
-```
-
----
 
 ## Developer Tools on Xavier
 Due to the ARM architechture used on Jetson products, most of the software can't be installed as normally. However, if you love these tools as I do, you can try build them from source alternatively.
 
-### Visual Studio Code ([This Youtube Video](https://www.youtube.com/watch?time_continue=191&v=_ODzBmI5lPA&feature=emb_logo))
+## Visual Studio Code ([This Youtube Video](https://www.youtube.com/watch?time_continue=191&v=_ODzBmI5lPA&feature=emb_logo))
 
 #### Install
 ```bash
@@ -216,3 +155,77 @@ sudo ln -s code-oss code
 ```
 
 ---
+
+## [OpenCV 3.4.3](https://github.com/jetsonhacks/buildOpenCVXavier)
+The following command is extracted from this [Blog](https://www.jetsonhacks.com/2018/11/08/build-opencv-3-4-on-nvidia-jetson-agx-xavier-developer-kit/)
+
+```bash
+#!bash
+# Remove the OpenCV installed by JetPack before performing this script installation
+sudo apt-get purge libopencv*
+
+# To download the source, build and install OpenCV
+wget https://raw.githubusercontent.com/JetsonHacksNano/buildOpenCV/master/buildOpenCV.sh
+chmod +x buildOpenCV.sh
+
+# Change ARCH_BIN=7.2 (Xavier)
+# DOWNLOAD_OPENCV_EXTRAS=YES
+./buildOpenCV
+
+# Make a symlink to /usr/include
+sudo ln -s /usr/local/include/opencv /usr/include/opencv
+```
+
+
+```bash
+# You can remove the sources and build files after you are done
+./removeOpenCVSources.sh
+
+# Test the OpenCV with the programs in the `Examples` folder
+cd Examples/
+g++ -o gstreamer_view -Wall -std=c++11 gstreamer_view.cpp $(pkg-config –libs opencv)
+./gstreamer_view
+
+# To run the Canny detection demo (Python 2.7):
+python cannyDetection.py
+
+# With Python 3.3:
+python3 cannyDetection.py
+```
+
+## Eigen 3.3.9
+```bash
+# Remove old eigen
+sudo apt autoremove libeigen3-dev
+
+sudo rm -rf /usr/include/eigen3 /usr/lib/cmake/eigen3 /usr/share/doc/libeigen3-dev /usr/share/pkgconfig/eigen3.pc /var/lib/dpkg/info/libeigen3-dev.list /var/lib/dpkg/info/libeigen3-dev.md5sums
+
+# Install
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip
+unzip eigen-3.3.9.zip
+cd eigen-3.3.9 && mkdir build
+cd build && cmake ..
+sudo make install
+
+# Make a symlink to /usr/include
+sudo ln -s /usr/local/include/eigen3 /usr/include
+```
+
+
+## [ROS on Xavier](https://www.jetsonhacks.com/2018/10/26/robot-operating-system-ros-on-nvidia-jetson-agx-xavier-developer-kit/)
+
+```bash
+#!bash
+# clone this guy's repo
+git clone https://github.com/jetsonhacks/installROSXavier.git
+cd installROSXavier
+
+# install
+./installROS.sh -p ros-melodic-desktop -p ros-melodic-rgbd-launch
+
+# (Optional) after the installation, setup the catkin_ws
+./setupCatkinWorkspace.sh
+```
+
+---
+

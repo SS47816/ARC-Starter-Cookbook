@@ -229,3 +229,12 @@ cd installROSXavier
 
 ---
 
+## Arduino IDE
+```bash
+#!bash
+git clone https://github.com/JetsonHacksNano/installArduinoIDE
+
+cd installArduinoIDE
+
+sudo ./installArduinoIDE.sh
+```

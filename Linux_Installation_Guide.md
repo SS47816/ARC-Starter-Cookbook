@@ -8,22 +8,18 @@ Cookbook for new Robotics students
 >
 > MIT License
 
-
-
 ## Prerequisite
 
 * A PC with Nvidia GPU (Host machine)
 * An USB stick (8G and above)
 * Internet Connection
-* [Ubuntu 18.04.4 ISO image](https://releases.ubuntu.com/18.04.4/)
-
-
+* [Ubuntu 20.04.4 ISO image](https://releases.ubuntu.com/20.04.4/)
 
 ## Installation
 
 Please follow the respective guide based on your system:
 
-#### Windows + Ubuntu
+### Windows + Ubuntu
 
 * Follow [this guide](https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/)
 
@@ -33,23 +29,21 @@ Please follow the respective guide based on your system:
 
 **Notes:** For either system, in the installation settings, please allocate at least 30 GB for `/root` and 30 GB for `/home`
 
-
-
-### Nvidia GPU Driver (version 450)
+### Nvidia GPU Driver (version 510)
 
 1. Check for available drivers:
 
    ```bash
    ubuntu-drivers devices
    ```
-   
+
 2. Run:
 
    ```bash
    sudo add-apt-repository ppa:graphics-drivers/ppa
    sudo apt-get update
-   # version 450 is recommended
-   sudo apt-get install nvidia-driver-450
+   # version 510 is recommended
+   sudo apt-get install nvidia-driver-510
    ```
 
 3. Reboot your system
@@ -60,89 +54,86 @@ Please follow the respective guide based on your system:
    nvidia-smi
    ```
 
-
 ### CUDA Toolkit for Machine Learning
 
-* **CUDA 10.2**
+* **CUDA 11.4**
 
-  1. Download the Nvidia SDK Manager from [here](https://developer.nvidia.com/nvidia-sdk-manager)
+   1. Download the Nvidia SDK Manager from [here](https://developer.nvidia.com/nvidia-sdk-manager)
 
-  2. Open the Nvidia SDK Manager and Install the the libraries compatible with JetPack 4.4 on the Host Machine
+   2. Open the Nvidia SDK Manager and Install the the libraries compatible with JetPack 5.0 on the Host Machine
 
-  3. Post-installation actions: (from the [official doc](https://docs.nvidia.com/cuda/archive/10.2/cuda-installation-guide-linux/index.html#ubuntu-installation))
-  
-     ```bash
-     # Add this line in the .bashrc file:
-     export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
-     ```
-  
-  4. Restart your terminal and check:
-  
-   ```bash
-     nvcc -V
-   ```
-  
-  5. Compile the sample codes:
-  
-     ```bash
-     # Go to the sample code folder
-     cd /usr/local/cuda-10.2/samples
-     
-     # Compile with errors ignored: 
-     make -k
-     # The errors in CUDA 10.2 are due to: https://github.com/NVIDIA/cuda-samples/issues/22
-     ```
-  
-     
+   3. Post-installation actions: (from the [official doc](https://docs.nvidia.com/cuda/archive/11.6.2/cuda-installation-guide-linux/index.html#post-installation-actions))
 
+      ```bash
+      # Add this line in the .bashrc file:
+      export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}
+      export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+      ```
+
+   4. Restart your terminal and check:
+
+      ```bash
+      nvcc -V
+      ```
+
+   5. Compile the sample codes:
+
+      ```bash
+      # Go to the sample code folder
+      cd /usr/local/cuda-11.4/samples
+      
+      # Compile with errors ignored: 
+      make -k
+      ```
 
 * **cuDNN v8.0.3**
 
-  > JetPack 4.4 is using cuDNN 8.0.0 (Developer Preview)
-1. Download the [cuDNN v8.0.3, for CUDA 10.2](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10), select the [cuDNN Library for Linux (x86)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.0.3.33/10.2_20200825/cudnn-10.2-linux-x64-v8.0.3.33.tgz) one
-  
-2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
+   > JetPack 4.4 is using cuDNN 8.0.0 (Developer Preview)
 
-   ```bash
-   # Unpack the archive
-   cd Downloads
-   tar -zxvf cudnn-10.2-linux-x64-v8.0.3.33.tgz
-   
-   # Move the unpacked contents to your CUDA directory
-   sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.2/lib64/
-   sudo cp  cuda/include/cudnn.h /usr/local/cuda-10.2/include/
-    
-   # Give read access to all users
-   sudo chmod a+r /usr/local/cuda-10.2/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-   ```
+   1. Download the [cuDNN v8.0.3, for CUDA 10.2](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse763-10), select the [cuDNN Library for Linux (x86)](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.0.3.33/10.2_20200825/cudnn-10.2-linux-x64-v8.0.3.33.tgz) one
 
+   2. Follow the steps in this [guide](https://medium.com/@taylordenouden/installing-tensorflow-gpu-on-ubuntu-18-04-89a142325138):
+
+      ```bash
+      # Unpack the archive
+      cd Downloads
+      tar -zxvf cudnn-10.2-linux-x64-v8.0.3.33.tgz
+
+      # Move the unpacked contents to your CUDA directory
+      sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.2/lib64/
+      sudo cp  cuda/include/cudnn.h /usr/local/cuda-10.2/include/
+         
+      # Give read access to all users
+      sudo chmod a+r /usr/local/cuda-10.2/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+      ```
 
 * **TensorRT 7.1.3**
 
   1. Download the  [TensorRT 7X for Ubuntu 1804 and CUDA 10.2](https://developer.nvidia.com/nvidia-tensorrt-7x-download)
   2. Follow the steps in [this doc](https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-601/tensorrt-install-guide/index.html):
   
-     ```bash
-     # Install TensorRT from the Debian local repo package
-     sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.2-trt7.1.3.4-ga-20200617_1-1_amd64.deb
-     
-     # add key
-     sudo apt-key add /var/nv-tensorrt-repo-cuda10.2-trt7.1.3.4-ga-20200617/7fa2af80.pub
-     
-     # install
-     sudo apt-get update
-     sudo apt-get install tensorrt
-     
-     # if you are using python3
-     sudo apt-get install python3-libnvinfer-dev
-     # if you are using TensorRT with TensorFlow
-     sudo apt-get install uff-converter-tf
-     ```
-     
-  4. Check:
-     ```bash
-     dpkg -l | grep TensorRT
-     ```
+      ```bash
+      # Install TensorRT from the Debian local repo package
+      sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.2-trt7.1.3.4-ga-20200617_1-1_amd64.deb
+      
+      # add key
+      sudo apt-key add /var/nv-tensorrt-repo-cuda10.2-trt7.1.3.4-ga-20200617/7fa2af80.pub
+      
+      # install
+      sudo apt-get update
+      sudo apt-get install tensorrt
+      
+      # if you are using python3
+      sudo apt-get install python3-libnvinfer-dev
+      # if you are using TensorRT with TensorFlow
+      sudo apt-get install uff-converter-tf
+      ```
+
+  3. Check:
+
+      ```bash
+      dpkg -l | grep TensorRT
+      ```
 
 ### [Python Virtual Environment](https://docs.python.org/3/library/venv.html)
 
@@ -169,9 +160,6 @@ Please follow the respective guide based on your system:
    source venv-isaac/bin/activate
    ```
 
-
-
-
 ### Nvidia Isaac SDK
 
 [Official Installation Guide](https://docs.nvidia.com/isaac/isaac/doc/setup.html#cuda-requirements-for-machine-learning)
@@ -182,6 +170,7 @@ Please follow the respective guide based on your system:
    # For example, my virtual environment is named as `venv_isaac`
    source venv_isaac/bin/activate
    ```
+
 2. Download the Issac-SDK(v20.1) package from the official website
 
 3. Unzip it, rename it, and move it to `~/home/` folder
@@ -209,42 +198,41 @@ Please follow the respective guide based on your system:
    ```bash
    "Installation Succeeded"
    ```
-   
+
    Else, you will need to troubleshoot the errors.
-   
+
 6. Activate bash completion by adding the following line to your `~/.bashrc`:
+
    ```bash
    source /usr/local/lib/bazel/bin/bazel-complete.bash
    ```
-   
-   
 
 #### Troubleshoot
 
 ##### Issue #1 No matching distribution found for tensorflow-gpu==1.15
 
 This is due to your pip is not the latest version (20.xxxx)
+
 1. Run:
-   
+
    ```bash
    pip install --upgarde pip
    ```
-	
-##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+
+##### Issue #2 Can not perform a '--user' install. User site-packages are not visible in this virtualenv
 
 1. Open the file `install_dependencies.sh`
 2. Delete the `--user` flag located at Ln 27, Col 34
 3. Save the file, and run the cmd again
-	
+
 ##### Issue #3 Failed to initialize NVML: Driver/library version mismatch
 
 1. Reboot
 2. export path variable by running: (I just wrote this to my .bashrc file)
-   
+
    ```bash
    export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
    ```
-
 
 ### Nvidia Isaac Sim (Unity3D)
 
@@ -270,10 +258,6 @@ This is due to your pip is not the latest version (20.xxxx)
 
 6. In the **Add Unity Version** popup window, install 2019.3.x (no modules are required). The sample project for IsaacSim Unity3D is created with 2019.3.0f6, so any newer 2019.3 version can be used.
 
-
-
-
-
 ## Developer Tools on Linux
 
 ### [Git](https://git-scm.com/): version control tool
@@ -285,7 +269,7 @@ sudo apt update
 sudo apt install git
 ```
 
-**Note:** When you use git for the first time on your machine, you need to set your user-name and your email address: 
+**Note:** When you use git for the first time on your machine, you need to set your user-name and your email address:
 
 ```bash
 # Set user-name
@@ -304,8 +288,6 @@ git config --global credential.helper store
 # Do something in git, for example
 git pull
 ```
-
-
 
 ### [Docker](https://www.docker.com/): Empowering App Development for Developers
 
@@ -331,7 +313,7 @@ git pull
 2. Add Docker’s official GPG key:
 
    ```bash
-   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    ```
 
    Verify that you now have the key with the fingerprint `9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88`, by searching for the last 8 characters of the fingerprint.
@@ -358,18 +340,16 @@ git pull
 
 1. Update the `apt` package index, and install the *latest version* of Docker Engine and containerd, or go to the next step to install a specific version:
 
-   ```
-    $ sudo apt-get update
-    $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+   ```bash
+   sudo apt-get update
+   sudo apt-get install docker-ce docker-ce-cli containerd.io
    ```
 
 2. Verify that Docker Engine is installed correctly by running the `hello-world` image.
 
+   ```bash
+   sudo docker run hello-world
    ```
-   $ sudo docker run hello-world
-   ```
-
-
 
 ### [CMake](https://cmake.org/): project build tool
 
@@ -379,8 +359,6 @@ git pull
    sudo apt install cmake # cmake 3.10 (recommended unless otherwise)
    sudo snap install cmake # cmake 3.17
    ```
-
-
 
 ### [Typora](https://typora.io/): a markdown file editor
 
@@ -396,10 +374,6 @@ sudo apt-get update
 # install typora
 sudo apt-get install typora
 ```
-
-
-
-
 
 ### [Sublime Text](https://www.sublimetext.com/): a text editor
 
@@ -418,11 +392,9 @@ sudo apt-get update
 sudo apt-get install sublime-text
 ```
 
-
-
 ### [VS Code](https://code.visualstudio.com/): an Integrated Development Environment (IDE)
 
-#### Recommended Extensions:
+#### Recommended Extensions
 
 * C/C++
 * Python
@@ -433,19 +405,9 @@ sudo apt-get install sublime-text
 * ROS
 * TabNine (Optional, it's magic!)
 
-
-
-
-
 ---
 
-
-
-
-
 ## Additional Resources
-
-
 
 ### CUDA (Alternative Installation Guide) (Not recommended)
 
@@ -483,28 +445,24 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
 
 ```
 
-
-
-
-
-### [Anaconda](https://docs.anaconda.com/anaconda/install/linux/): a python virtual environment manager 
+### [Anaconda](https://docs.anaconda.com/anaconda/install/linux/): a python virtual environment manager
 
 1. Download the Python 3.7 version Anaconda 64-Bit (x86) Installer from [here](https://www.anaconda.com/products/individual#linux), and save it to `~/Downloads/`
 
 2. Run the following commands in the terminal:
 
-```bash
-# To use GUI packages with Linux, you will need to install the following extended dependencies for Qt:
-sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+   ```bash
+   # To use GUI packages with Linux, you will need to install the following extended dependencies for Qt:
+   sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 
-bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh
-```
+   bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh
+   ```
 
 3. Follow the instructions in the terminal, and press Enter Key and type in `yes` when requested
 
 4. Installation successful!
 
-5. Run 
+5. Run
 
    ```bash
    # Refresh your Terminal
@@ -514,7 +472,7 @@ bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh
    conda config --set auto_activate_base False
    ```
 
-**User Guide:** 
+**User Guide:**
 
 * [Manage Environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 * [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
@@ -527,11 +485,7 @@ To create a environment according to specifications stored in a file, run:
 conda env create -f environment.yml
 ```
 
-
-
 ### [Zoom](https://zoom.us/download#client_4meeting): Online Meetings
-
-
 
 ## Troubleshooting
 
@@ -541,8 +495,6 @@ conda env create -f environment.yml
 apt --fix-broken install
 ```
 
-
-
 ### Remove CUDA & Nvidia Driver
 
 ```bash
@@ -551,4 +503,3 @@ sudo apt-get autoremove
 sudo apt-get autoclean
 sudo rm -rf /usr/local/cuda*
 ```
-
